@@ -163,7 +163,41 @@ body {
   justify-content: space-between;
 }
 
+
 .brand-logo {
+  font-family: var(--font-mono);
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #fff;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  transition: transform 0.25s ease;
+  cursor: pointer;
+}
+
+.brand-icon {
+  flex-shrink: 0;
+  transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+.brand-logo:hover {
+  transform: translateY(-1px);
+}
+
+.brand-logo:hover .brand-icon {
+  transform: rotate(-8deg) scale(1.1);
+  filter: drop-shadow(0 0 10px rgba(0, 240, 255, 0.75));
+}
+
+.brand-tag {
+  color: var(--primary-cyan);
+}
+
+/* old brand logo */
+.brand-logo-old {
   font-family: var(--font-mono);
   font-size: 1.15rem;
   font-weight: 700;
