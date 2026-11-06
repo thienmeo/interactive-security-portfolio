@@ -162,12 +162,15 @@ function setupProjectTabs() {
   });
 }
 
-/* ================= INTERACTIVE HERO ENTITIES ================= */
+/* ================= INTERACTIVE HERO ENTITIES & BULLETPROOF CV ================= */
 function setupHeroInteractions(audioManager) {
-  // 1. Folders interaction: jumping to categories & filtering
+  // 1. Folders interaction: jumping to categories & filtering with active feedback
   const folders = document.querySelectorAll('.folder-interactive');
   folders.forEach((folder) => {
-    folder.addEventListener('click', () => {
+    folder.addEventListener('click', (e) => {
+      // Don't trigger folder navigation if clicking on a download link inside the folder
+      if (e.target.closest('a') || e.target.closest('button')) return;
+
       const target = folder.dataset.target;
       audioManager?.playChime?.(520);
 
@@ -175,7 +178,9 @@ function setupHeroInteractions(audioManager) {
         const tab = document.querySelector(`.tab-btn[data-filter="${target}"]`);
         if (tab) tab.click();
         const section = document.getElementById('projects');
-        if (section) section.scrollIntoView({ behavior: 'smooth' });
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth' });
+        }
       } else if (target === 'skills') {
         const section = document.getElementById('skills');
         if (section) section.scrollIntoView({ behavior: 'smooth' });
@@ -193,6 +198,14 @@ function setupHeroInteractions(audioManager) {
       if (tab) tab.click();
       const section = document.getElementById('projects');
       if (section) section.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  // 3. Bulletproof CV Download Handlers
+  const cvButtons = document.querySelectorAll('#btn-hero-cv, #btn-doc-cv, .doc-download-btn');
+  cvButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      audioManager?.playChime?.(720);
     });
   });
 }
