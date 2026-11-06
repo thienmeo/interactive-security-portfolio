@@ -6,8 +6,8 @@ import { initScrollAnimations } from './animations/scrollAnimations.js';
 import { simulateLoader } from './utils/loader.js';
 import { AudioManager } from './audio/AudioManager.js';
 
-window.addEventListener('DOMContentLoaded', () => {
-  // Khởi tạo Theme Sáng / Tối ngay lập tức
+function initApp() {
+  // 1. Setup Theme immediately
   setupThemeToggle();
 
   const progressBar = document.getElementById('progress-fill');
@@ -17,7 +17,7 @@ window.addEventListener('DOMContentLoaded', () => {
   // Khởi tạo hệ thống âm thanh Web Audio
   const audioManager = new AudioManager();
 
-  // 1. Màn hình Preloader
+  // 2. Màn hình Preloader
   simulateLoader(
     (progress) => {
       if (progressBar) progressBar.style.width = `${progress}%`;
@@ -28,29 +28,67 @@ window.addEventListener('DOMContentLoaded', () => {
     () => {
       if (loader) loader.classList.add('loaded');
 
-      // 2. Kích hoạt WebGL 3D Network Security Mesh
+      // 3. Kích hoạt WebGL 3D Network Security Mesh
       const canvas = document.getElementById('webgl-canvas');
       if (canvas) {
-        const sceneManager = new SceneManager(canvas);
-        createParticles(sceneManager.scene);
-        sceneManager.animate();
+        try {
+          const sceneManager = new SceneManager(canvas);
+          createParticles(sceneManager.scene);
+          sceneManager.animate();
+        } catch (e) {
+          console.warn('WebGL init skipped:', e);
+        }
       }
 
-      // 3. Kích hoạt Tech Cursor & GSAP Reveal
+      // 4. Kích hoạt Cursor & Hiệu ứng cuộn GSAP
       initCursor();
       initScrollAnimations();
 
-      // 4. Gắn sự kiện âm thanh tương tác
+      // 5. Gắn sự kiện âm thanh tương tác
       setupAudioInteractions(audioManager);
 
-      // 5. Gắn sự kiện Modal Liên Hệ Trực Tiếp
+      // 6. Gắn sự kiện Modal, Project Tabs & Hero Interactions
       setupContactModal();
       setupProjectTabs();
       setupHeroInteractions(audioManager);
     }
   );
-});
+}
 
+// Resilient DOM ready check
+if (document.readyState === 'loading') {
+  window.addEventListener('DOMContentLoaded', initApp);
+} else {
+  initApp();
+}
+
+/* ================= THEME TOGGLE (LIGHT / DARK) ================= */
+function setupThemeToggle() {
+  const btn = document.getElementById('btn-theme-toggle');
+  const savedTheme = localStorage.getItem('theme') || 'light';
+  document.documentElement.setAttribute('data-theme', savedTheme);
+  updateThemeBtn(btn, savedTheme);
+
+  if (btn) {
+    btn.addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-theme') || 'light';
+      const next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      updateThemeBtn(btn, next);
+    });
+  }
+}
+
+function updateThemeBtn(btn, theme) {
+  if (!btn) return;
+  const icon = btn.querySelector('.theme-icon');
+  const text = btn.querySelector('.theme-text');
+  if (icon) icon.textContent = theme === 'dark' ? '☀️' : '🌙';
+  if (text) text.textContent = theme === 'dark' ? 'Light' : 'Dark';
+}
+
+/* ================= AUDIO INTERACTIONS ================= */
 function setupAudioInteractions(audioManager) {
   const soundBtn = document.getElementById('btn-sound-toggle');
   if (soundBtn) {
@@ -59,7 +97,7 @@ function setupAudioInteractions(audioManager) {
     });
   }
 
-  const clickableElements = document.querySelectorAll('.btn, .nav-cta, .project-link, .sound-toggle, .social-btn, .contact-card-btn, .modal-action-btn');
+  const clickableElements = document.querySelectorAll('.btn, .nav-cta, .project-link, .sound-toggle, .social-btn, .contact-card-btn, .modal-action-btn, .theme-toggle');
   clickableElements.forEach((el) => {
     el.addEventListener('click', () => {
       audioManager.playChime(640);
@@ -70,6 +108,7 @@ function setupAudioInteractions(audioManager) {
   });
 }
 
+/* ================= MODAL LIÊN HỆ ================= */
 function setupContactModal() {
   const modal = document.getElementById('modal-contact');
   const openBtn = document.getElementById('btn-hero-contact');
@@ -96,6 +135,7 @@ function setupContactModal() {
   }
 }
 
+/* ================= PROJECT TABS FILTER ================= */
 function setupProjectTabs() {
   const tabs = document.querySelectorAll('.tab-btn');
   const cards = document.querySelectorAll('.project-card');
@@ -118,6 +158,41 @@ function setupProjectTabs() {
           card.classList.add('hidden');
         }
       });
+    });
+  });
+}
+
+/* ================= INTERACTIVE HERO ENTITIES ================= */
+function setupHeroInteractions(audioManager) {
+  // 1. Folders interaction: jumping to categories & filtering
+  const folders = document.querySelectorAll('.folder-interactive');
+  folders.forEach((folder) => {
+    folder.addEventListener('click', () => {
+      const target = folder.dataset.target;
+      audioManager?.playChime?.(520);
+
+      if (target === 'security' || target === 'web') {
+        const tab = document.querySelector(`.tab-btn[data-filter="${target}"]`);
+        if (tab) tab.click();
+        const section = document.getElementById('projects');
+        if (section) section.scrollIntoView({ behavior: 'smooth' });
+      } else if (target === 'skills') {
+        const section = document.getElementById('skills');
+        if (section) section.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+
+  // 2. Clickable category pills
+  const catButtons = document.querySelectorAll('.cat-pill-btn');
+  catButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const filter = btn.dataset.filter;
+      audioManager?.playChime?.(580);
+      const tab = document.querySelector(`.tab-btn[data-filter="${filter}"]`);
+      if (tab) tab.click();
+      const section = document.getElementById('projects');
+      if (section) section.scrollIntoView({ behavior: 'smooth' });
     });
   });
 }

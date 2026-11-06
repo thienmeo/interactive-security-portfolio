@@ -1,42 +1,40 @@
 import gsap from 'gsap';
 
 export function initScrollAnimations() {
-  // Timeline hoạt cảnh mở màn (Intro Hero Animation)
-  const tl = gsap.timeline({ delay: 0.2 });
+  const tl = gsap.timeline({ delay: 0.1 });
 
-  tl.from('.hero-badge', {
-    y: -20,
-    opacity: 0,
-    duration: 0.8,
-    ease: 'power3.out'
-  })
-  .from('.hero-title', {
-    y: 35,
-    opacity: 0,
-    duration: 1,
-    ease: 'power3.out'
-  }, '-=0.5')
-  .from('.hero-subtitle', {
-    y: 25,
-    opacity: 0,
-    duration: 0.8,
-    ease: 'power3.out'
-  }, '-=0.6')
-  .from('.hero-actions', {
-    y: 20,
-    opacity: 0,
-    duration: 0.8,
-    ease: 'power3.out'
-  }, '-=0.6')
-  .from('.metrics-strip', {
-    y: 30,
-    opacity: 0,
-    duration: 1,
-    ease: 'power3.out'
-  }, '-=0.5');
+  const heroTopPill = document.querySelector('.hero-top-pill');
+  const heroTitle = document.querySelector('.hero-portfolio-title');
+  const heroSub = document.querySelector('.hero-portfolio-sub');
+  const folderDeck = document.querySelector('.folder-deck');
+  const shelfDivider = document.querySelector('.shelf-divider-strip');
+  const heroActions = document.querySelector('.hero-actions');
+  const infoStrip = document.querySelector('.info-strip');
 
-  // Hiệu ứng tương tác card 3D micro-tilt khi di chuột
-  const cards = document.querySelectorAll('.feature-card');
+  if (heroTopPill) {
+    tl.from(heroTopPill, { y: -15, opacity: 0, duration: 0.6, ease: 'power3.out' });
+  }
+  if (heroTitle) {
+    tl.from(heroTitle, { y: 30, opacity: 0, duration: 0.8, ease: 'power3.out' }, '-=0.4');
+  }
+  if (heroSub) {
+    tl.from(heroSub, { y: 20, opacity: 0, duration: 0.6, ease: 'power3.out' }, '-=0.4');
+  }
+  if (folderDeck) {
+    tl.from(folderDeck, { y: 40, opacity: 0, duration: 0.9, ease: 'power3.out' }, '-=0.3');
+  }
+  if (shelfDivider) {
+    tl.from(shelfDivider, { opacity: 0, duration: 0.6, ease: 'power3.out' }, '-=0.4');
+  }
+  if (heroActions) {
+    tl.from(heroActions, { y: 20, opacity: 0, duration: 0.6, ease: 'power3.out' }, '-=0.3');
+  }
+  if (infoStrip) {
+    tl.from(infoStrip, { y: 25, opacity: 0, duration: 0.8, ease: 'power3.out' }, '-=0.3');
+  }
+
+  // Micro-tilt on project cards
+  const cards = document.querySelectorAll('.project-card, .skill-card');
   cards.forEach((card) => {
     card.addEventListener('mousemove', (e) => {
       const rect = card.getBoundingClientRect();
@@ -44,11 +42,11 @@ export function initScrollAnimations() {
       const y = e.clientY - rect.top - rect.height / 2;
 
       gsap.to(card, {
-        rotationY: x * 0.05,
-        rotationX: -y * 0.05,
-        duration: 0.4,
+        rotationY: x * 0.02,
+        rotationX: -y * 0.02,
+        duration: 0.3,
         ease: 'power1.out',
-        transformPerspective: 800
+        transformPerspective: 1000
       });
     });
 
@@ -56,7 +54,7 @@ export function initScrollAnimations() {
       gsap.to(card, {
         rotationY: 0,
         rotationX: 0,
-        duration: 0.6,
+        duration: 0.5,
         ease: 'power2.out'
       });
     });
