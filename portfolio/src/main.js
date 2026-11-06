@@ -7,6 +7,9 @@ import { simulateLoader } from './utils/loader.js';
 import { AudioManager } from './audio/AudioManager.js';
 
 window.addEventListener('DOMContentLoaded', () => {
+  // Khởi tạo Theme Sáng / Tối ngay lập tức
+  setupThemeToggle();
+
   const progressBar = document.getElementById('progress-fill');
   const loaderStatus = document.getElementById('loader-status');
   const loader = document.getElementById('loader');
@@ -43,6 +46,7 @@ window.addEventListener('DOMContentLoaded', () => {
       // 5. Gắn sự kiện Modal Liên Hệ Trực Tiếp
       setupContactModal();
       setupProjectTabs();
+      setupHeroInteractions(audioManager);
     }
   );
 });

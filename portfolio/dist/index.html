@@ -8,8 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-    <script type="module" crossorigin src="/assets/index-BCw8mkG8.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-V9Mjx0mS.css">
+    <script type="module" crossorigin src="/assets/index-C2ly_dAu.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-BJwZCo2l.css">
   </head>
   <body>
     <!-- Preloader & Terminal Init -->
@@ -59,7 +59,11 @@
           <a href="#contact">Liên Hệ</a>
         </nav>
 
-        <div class="nav-actions">
+                <div class="nav-actions">
+          <button class="theme-toggle" id="btn-theme-toggle" title="Chuyển đổi giao diện Sáng / Tối" aria-label="Toggle Light/Dark Mode">
+            <span class="theme-icon">🌙</span>
+            <span class="theme-text">Dark</span>
+          </button>
           <button class="sound-toggle" id="btn-sound-toggle" title="Âm thanh tương tác / Sound FX">
             <span>Audio: OFF</span>
           </button>
@@ -68,59 +72,72 @@
     </header>
 
     <main id="content-wrapper">
-      <!-- HERO SECTION -->
             <!-- HERO SECTION -->
       <section id="hero" class="section hero-section">
         <div class="hero-top-pill">
           <span class="pill-dot"></span>
-          <span>2025 — 2026 WORK COLLECTION</span>
+          <span>BỘ SƯU TẬP DỰ ÁN 2025 — 2026</span>
           <span class="pill-plus">+</span>
         </div>
 
         <h1 class="hero-portfolio-title">Portfolio</h1>
-        <p class="hero-portfolio-sub">2025 – 2026 BỘ SƯU TẬP TÁC PHẨM & DỰ ÁN KỸ THUẬT</p>
+        <p class="hero-portfolio-sub">CHUYÊN SÂU AN TOÀN THÔNG TIN & KỸ THUẬT PHÁT TRIỂN WEB</p>
 
-        <!-- 3D Frosted Pastel Folder Deck (Exact match with image visual) -->
+        <!-- Interactive 3D Career Milestone Folder Deck -->
         <div class="folder-showcase-container">
           <div class="folder-deck">
-            <!-- Coral Folder Tab (Left) -->
-            <div class="folder folder-coral">
-              <div class="folder-tab"></div>
+            <!-- Coral Folder Tab: Security Fundamentals -->
+            <div class="folder folder-coral folder-interactive" data-target="security" title="Nhấn để xem các Lab & Đồ Án An Toàn Thông Tin">
+              <div class="folder-tab">AN NINH</div>
+              <div class="folder-hover-tag">Security Labs</div>
             </div>
 
-            <!-- Yellow Folder Tab (2022) -->
-            <div class="folder folder-yellow">
-              <div class="folder-tab">2022</div>
-              <div class="folder-sheet-mini"></div>
+            <!-- Yellow Folder Tab: 2022 CCNA Networking -->
+            <div class="folder folder-yellow folder-interactive" data-target="security" title="Nhấn để xem Mô Hình Mạng Doanh Nghiệp CCNA (2022)">
+              <div class="folder-tab">2022: MẠNG CCNA</div>
+              <div class="folder-hover-tag">VLAN & OSPF</div>
             </div>
 
-            <!-- White Project Summary Document -->
+            <!-- Central Functional Document: Candidate Resume & Verified Competencies -->
             <div class="folder-document">
               <div class="doc-header">
-                <span class="doc-tag">CHUYÊN ĐỀ & DỰ ÁN</span>
+                <span class="doc-badge">HỒ SƠ NĂNG LỰC ATTT</span>
               </div>
               <div class="doc-body">
-                <div class="doc-line"><span>An Toàn Mạng</span><span class="doc-check">✓</span></div>
-                <div class="doc-line"><span>Hạ Tầng Hệ Thống</span><span class="doc-check">✓</span></div>
-                <div class="doc-line"><span>Kỹ Thuật Web</span><span class="doc-check">✓</span></div>
+                <div class="doc-line"><span>Cử Nhân ATTT HUIT</span><span class="doc-check">✓</span></div>
+                <div class="doc-line"><span>Kiến Trúc Mạng CCNA</span><span class="doc-check">✓</span></div>
+                <div class="doc-line"><span>Tường Lửa Sophos UTM</span><span class="doc-check">✓</span></div>
+                <div class="doc-line"><span>ModSecurity WAF</span><span class="doc-check">✓</span></div>
+                <div class="doc-line"><span>Interactive 3D Web</span><span class="doc-check">✓</span></div>
+              </div>
+              <div class="doc-action">
+                <a href="/assets/Pham_Thang_Thien_Resume.docx" download class="doc-download-btn" title="Tải về file Word CV chính thức của Phạm Thắng Thiện">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                  <span>Tải CV Bản Đầy Đủ</span>
+                </a>
               </div>
             </div>
 
-            <!-- Main Blue Frosted Glass Folder (2025 Front) -->
-            <div class="folder folder-blue-front">
-              <div class="folder-tab">2025</div>
+            <!-- Main Blue Frosted Glass Folder: 2025 Web Engineering -->
+            <div class="folder folder-blue-front folder-interactive" data-target="web" title="Nhấn để xem Dự án Web Tương Tác Three.js & Các Sản Phẩm Web">
+              <div class="folder-tab">2025 — 2026: WEB & 3D</div>
               <div class="folder-glass-gloss"></div>
-              <div class="folder-badge-year">2025 — 2026</div>
+              <div class="folder-front-content">
+                <span class="folder-badge-year">2025 — 2026</span>
+                <span class="folder-cta-hint">Nhấn xem Sản Phẩm Web →</span>
+              </div>
             </div>
 
-            <!-- Slate Gray Folder (2023) -->
-            <div class="folder folder-gray">
-              <div class="folder-tab">2023</div>
+            <!-- Slate Gray Folder: 2023 Systems & Infrastructure -->
+            <div class="folder folder-gray folder-interactive" data-target="skills" title="Nhấn để xem Kỹ Năng Quản Trị Hệ Thống Linux/Windows (2023)">
+              <div class="folder-tab">2023: HỆ THỐNG</div>
+              <div class="folder-hover-tag">Linux & WinServer</div>
             </div>
 
-            <!-- Sky Blue Folder (2024 Right) -->
-            <div class="folder folder-cyan">
-              <div class="folder-tab">2024</div>
+            <!-- Sky Blue Folder: 2024 Defensive Security -->
+            <div class="folder folder-cyan folder-interactive" data-target="security" title="Nhấn để xem Tường Lửa Sophos UTM & WAF (2024)">
+              <div class="folder-tab">2024: PHÒNG THỦ</div>
+              <div class="folder-hover-tag">Sophos & WAF</div>
             </div>
           </div>
           
@@ -128,31 +145,32 @@
           <div class="showcase-shelf"></div>
         </div>
 
-        <!-- Directory & Index Shelf Strip (Matching image divider) -->
+        <!-- Directory & Index Shelf Strip: Functional Nav Links -->
         <div class="shelf-divider-strip">
-          <div class="shelf-item shelf-left">
+          <a href="#projects" class="shelf-item shelf-left" title="Chuyển nhanh đến kho 7 dự án">
             <span class="bullet-dot">•</span>
-            <span>MỤC LỤC & DANH MỤC</span>
-          </div>
+            <span>MỤC LỤC & 7 DỰ ÁN KỸ THUẬT</span>
+          </a>
           <div class="shelf-pill-center">
-            <span>2025 WORK COLLECTION</span>
+            <span class="pulse-dot"></span>
+            <span>STATUS: SẴN SÀNG NHẬN DỰ ÁN & VIỆC LÀM</span>
           </div>
-          <div class="shelf-item shelf-right">
-            <span>#01</span>
-          </div>
+          <a href="#contact" class="shelf-item shelf-right" title="Mở cổng kết nối trực tiếp">
+            <span>#KẾT NỐI TRỰC TIẾP</span>
+          </a>
         </div>
 
-        <!-- Spaced Categories (Pure Vietnamese, NO Chinese) -->
+        <!-- Clickable Category Pills (Pure Vietnamese, Filters Projects Directly) -->
         <div class="hero-categories-spaced">
-          <span>AN NINH MẠNG</span>
+          <button class="cat-pill-btn" data-filter="security" title="Lọc các dự án An Ninh Mạng">🛡️ AN NINH MẠNG</button>
           <span class="sep">—</span>
-          <span>QUẢN TRỊ HỆ THỐNG</span>
+          <a href="#skills" class="cat-pill-link" title="Xem Kỹ Năng Hệ Thống">🖥️ QUẢN TRỊ HỆ THỐNG</a>
           <span class="sep">—</span>
-          <span>KỸ THUẬT WEB & CLOUD</span>
+          <button class="cat-pill-btn" data-filter="web" title="Lọc các dự án Lập Trình Web">⚡ KỸ THUẬT WEB & CLOUD</button>
         </div>
 
         <p class="hero-desc-clean">
-          Kỹ sư An toàn thông tin tốt nghiệp HUIT. Chuyên sâu về kiến trúc mạng doanh nghiệp, tường lửa Sophos UTM, ModSecurity WAF và phát triển ứng dụng Web tương tác hiện đại.
+          Kỹ sư An toàn thông tin tốt nghiệp HUIT. Chuyên sâu về thiết kế mạng doanh nghiệp (CCNA), triển khai tường lửa Sophos UTM, bảo vệ tầng ứng dụng với ModSecurity WAF và kiến tạo các trải nghiệm Web 3D hiện đại.
         </p>
 
         <div class="hero-actions">
