@@ -42,6 +42,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
       // 5. Gắn sự kiện Modal Liên Hệ Trực Tiếp
       setupContactModal();
+      setupProjectTabs();
     }
   );
 });
@@ -89,4 +90,30 @@ function setupContactModal() {
       }
     });
   }
+}
+
+function setupProjectTabs() {
+  const tabs = document.querySelectorAll('.tab-btn');
+  const cards = document.querySelectorAll('.project-card');
+  if (!tabs.length) return;
+
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      const filter = tab.dataset.filter;
+      tabs.forEach((t) => t.classList.remove('active'));
+      tab.classList.add('active');
+
+      cards.forEach((card) => {
+        const cat = card.dataset.category;
+        const matches = filter === 'all' || cat === filter;
+        if (matches) {
+          card.classList.remove('hidden');
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0)';
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    });
+  });
 }

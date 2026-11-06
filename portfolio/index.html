@@ -29,76 +29,150 @@
     <canvas id="webgl-canvas"></canvas>
 
     <!-- Header Navigation -->
-    <header class="navbar">
+        <header class="navbar">
       <div class="nav-container">
         <a href="#hero" class="brand-logo" id="btn-back-home" title="Về đầu trang / Back to Home">
-          <svg class="brand-icon" viewBox="0 0 100 100" fill="none" width="28" height="28" aria-hidden="true">
-            <polygon points="50,6 88,22 88,60 50,94 12,60 12,22" fill="#07090e" stroke="url(#navLogoGrad)" stroke-width="6" stroke-linejoin="round"/>
-            <path d="M26 34 H74" stroke="#00f0ff" stroke-width="7" stroke-linecap="round"/>
-            <path d="M50 34 V72" stroke="#00f0ff" stroke-width="7" stroke-linecap="round"/>
-            <path d="M34 50 H66" stroke="#00ffa3" stroke-width="5" stroke-linecap="round"/>
-            <circle cx="50" cy="50" r="4.5" fill="#ffffff"/>
-            <defs>
-              <linearGradient id="navLogoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#00f0ff"/>
-                <stop offset="100%" stop-color="#00ffa3"/>
-              </linearGradient>
-            </defs>
-          </svg>
-          <span class="brand-text">PHẠM THẮNG THIỆN</span>
+          <span class="brand-avatar-badge">
+            <svg viewBox="0 0 24 24" fill="none" width="18" height="18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <path d="M9 12l2 2 4-4"/>
+            </svg>
+          </span>
+          <div class="brand-identity">
+            <span class="brand-name">Thắng Thiện</span>
+            <span class="brand-sub">ENGINEER</span>
+          </div>
         </a>
+
+        <!-- Center Pill Badge (Matching image) -->
+        <div class="nav-center-pill">
+          <span class="pulse-dot"></span>
+          <span>2025 — 2026 WORK COLLECTION</span>
+        </div>
+
         <nav class="nav-links">
-          <a href="#about">About</a>
-          <a href="#skills">Skills</a>
-          <a href="#projects">Các Dự Án</a>
-          <a href="#education">Education</a>
+          <a href="#about">Giới Thiệu</a>
+          <a href="#skills">Kỹ Năng</a>
+          <a href="#projects">Dự Án</a>
+          <a href="#education">Học Vấn</a>
           <a href="#contact">Liên Hệ</a>
         </nav>
+
         <div class="nav-actions">
-          <button class="sound-toggle" id="btn-sound-toggle" title="Toggle System Chime Audio">
+          <button class="sound-toggle" id="btn-sound-toggle" title="Âm thanh tương tác / Sound FX">
             <span>Audio: OFF</span>
           </button>
-          <a href="https://www.facebook.com/thien.phamthang.1211" target="_blank" rel="noopener noreferrer" class="nav-cta">Facebook</a>
         </div>
       </div>
     </header>
 
     <main id="content-wrapper">
       <!-- HERO SECTION -->
+            <!-- HERO SECTION -->
       <section id="hero" class="section hero-section">
-        <div class="hero-badge">
-          <span class="badge-dot"></span>
-          <span>B.S. Information Security &bull; Graduated HUIT</span>
+        <div class="hero-top-pill">
+          <span class="pill-dot"></span>
+          <span>2025 — 2026 WORK COLLECTION</span>
+          <span class="pill-plus">+</span>
         </div>
 
-        <h1 class="hero-title">
-          Phạm Thắng Thiện<br />
-          <span class="gradient-text">Network Security & Systems Engineer</span>
-        </h1>
+        <h1 class="hero-portfolio-title">Portfolio</h1>
+        <p class="hero-portfolio-sub">2025 – 2026 BỘ SƯU TẬP TÁC PHẨM & DỰ ÁN KỸ THUẬT</p>
 
-        <p class="hero-subtitle">
-          Chuyên sâu về <strong>Bảo mật mạng (Network Security)</strong>, <strong>Quản trị hệ thống (Linux & Windows Server)</strong> và kiến trúc tường lửa doanh nghiệp. Kết hợp tư duy giải quyết sự cố kỹ thuật hạ tầng với khả năng phát triển ứng dụng tương tác hiện đại.
+        <!-- 3D Frosted Pastel Folder Deck (Exact match with image visual) -->
+        <div class="folder-showcase-container">
+          <div class="folder-deck">
+            <!-- Coral Folder Tab (Left) -->
+            <div class="folder folder-coral">
+              <div class="folder-tab"></div>
+            </div>
+
+            <!-- Yellow Folder Tab (2022) -->
+            <div class="folder folder-yellow">
+              <div class="folder-tab">2022</div>
+              <div class="folder-sheet-mini"></div>
+            </div>
+
+            <!-- White Project Summary Document -->
+            <div class="folder-document">
+              <div class="doc-header">
+                <span class="doc-tag">CHUYÊN ĐỀ & DỰ ÁN</span>
+              </div>
+              <div class="doc-body">
+                <div class="doc-line"><span>An Toàn Mạng</span><span class="doc-check">✓</span></div>
+                <div class="doc-line"><span>Hạ Tầng Hệ Thống</span><span class="doc-check">✓</span></div>
+                <div class="doc-line"><span>Kỹ Thuật Web</span><span class="doc-check">✓</span></div>
+              </div>
+            </div>
+
+            <!-- Main Blue Frosted Glass Folder (2025 Front) -->
+            <div class="folder folder-blue-front">
+              <div class="folder-tab">2025</div>
+              <div class="folder-glass-gloss"></div>
+              <div class="folder-badge-year">2025 — 2026</div>
+            </div>
+
+            <!-- Slate Gray Folder (2023) -->
+            <div class="folder folder-gray">
+              <div class="folder-tab">2023</div>
+            </div>
+
+            <!-- Sky Blue Folder (2024 Right) -->
+            <div class="folder folder-cyan">
+              <div class="folder-tab">2024</div>
+            </div>
+          </div>
+          
+          <!-- Shelf Baseline -->
+          <div class="showcase-shelf"></div>
+        </div>
+
+        <!-- Directory & Index Shelf Strip (Matching image divider) -->
+        <div class="shelf-divider-strip">
+          <div class="shelf-item shelf-left">
+            <span class="bullet-dot">•</span>
+            <span>MỤC LỤC & DANH MỤC</span>
+          </div>
+          <div class="shelf-pill-center">
+            <span>2025 WORK COLLECTION</span>
+          </div>
+          <div class="shelf-item shelf-right">
+            <span>#01</span>
+          </div>
+        </div>
+
+        <!-- Spaced Categories (Pure Vietnamese, NO Chinese) -->
+        <div class="hero-categories-spaced">
+          <span>AN NINH MẠNG</span>
+          <span class="sep">—</span>
+          <span>QUẢN TRỊ HỆ THỐNG</span>
+          <span class="sep">—</span>
+          <span>KỸ THUẬT WEB & CLOUD</span>
+        </div>
+
+        <p class="hero-desc-clean">
+          Kỹ sư An toàn thông tin tốt nghiệp HUIT. Chuyên sâu về kiến trúc mạng doanh nghiệp, tường lửa Sophos UTM, ModSecurity WAF và phát triển ứng dụng Web tương tác hiện đại.
         </p>
 
         <div class="hero-actions">
           <a href="#projects" class="btn btn-primary">
-            <span>Khám Phá Các Dự Án</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <span>Khám Phá Dự Án</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
           <button class="btn btn-secondary" id="btn-hero-contact">
             <span>Liên Hệ Trực Tiếp</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
           </button>
         </div>
 
         <!-- Quick Info Strip -->
         <div class="info-strip">
           <div class="info-item">
-            <span class="info-label">Địa Chỉ</span>
-            <span class="info-val">46/12 Đông Hưng Thuận 08, Q.12, TP.HCM</span>
+            <span class="info-label">Kỹ Sư</span>
+            <span class="info-val">Phạm Thắng Thiện</span>
           </div>
           <div class="info-item">
-            <span class="info-label">Điện Thoại</span>
+            <span class="info-label">Hotline / Zalo</span>
             <span class="info-val"><a href="tel:0338623328">0338 623 328</a></span>
           </div>
           <div class="info-item">
@@ -106,8 +180,8 @@
             <span class="info-val"><a href="mailto:thienpham12112003@gmail.com">thienpham12112003@gmail.com</a></span>
           </div>
           <div class="info-item">
-            <span class="info-label">Trình Độ</span>
-            <span class="info-val">Cử nhân ATTT (HUIT)</span>
+            <span class="info-label">Địa Điểm</span>
+            <span class="info-val">Q.12, TP. Hồ Chí Minh</span>
           </div>
         </div>
       </section>
@@ -226,15 +300,22 @@
 
       <!-- PROJECTS SECTION -->
       <section id="projects" class="section projects-section">
-        <div class="section-header">
+                <div class="section-header">
           <div class="section-tag">PORTFOLIO SHOWCASE</div>
           <h2 class="section-title">Các Dự Án Thực Tế (Key Projects)</h2>
-          <p class="section-desc">Các giải pháp hạ tầng, mô phỏng mạng diện rộng, bảo mật hệ thống và kỹ thuật web tương tác.</p>
+          <p class="section-desc">Phân loại theo chuyên môn an toàn thông tin hạ tầng và các sản phẩm công nghệ web tương tác.</p>
+          
+          <!-- Category Tabs -->
+          <div class="project-tabs">
+            <button class="tab-btn active" data-filter="all">Tất Cả Dự Án</button>
+            <button class="tab-btn" data-filter="security">🛡️ An Ninh & Bảo Mật</button>
+            <button class="tab-btn" data-filter="web">⚡ Lập Trình Web</button>
+          </div>
         </div>
 
         <div class="projects-grid">
           <!-- Project 1: CCNA Network Architecture -->
-          <article class="project-card">
+          <article class="project-card" data-category="security">
             <div class="project-header">
               <span class="project-badge">CCNA / ENTERPRISE NETWORKING</span>
               <h3 class="project-title">Chuỗi Dự Án CCNA (Mô Phỏng Mạng)</h3>
@@ -259,7 +340,7 @@
           </article>
 
           <!-- Project 2: Sophos UTM Firewall -->
-          <article class="project-card highlight">
+          <article class="project-card highlight" data-category="security">
             <div class="project-header">
               <span class="project-badge">SYSTEMS & FIREWALL</span>
               <h3 class="project-title">Mô Hình Tường Lửa Sophos UTM</h3>
@@ -283,7 +364,7 @@
           </article>
 
           <!-- Project 3: ModSecurity WAF -->
-          <article class="project-card">
+          <article class="project-card" data-category="security">
             <div class="project-header">
               <span class="project-badge">APPLICATION SECURITY</span>
               <h3 class="project-title">Web Application Firewall (ModSecurity Demo)</h3>
@@ -307,7 +388,7 @@
           </article>
 
           <!-- Project 4: Threat Logging Analysis -->
-          <article class="project-card">
+          <article class="project-card" data-category="security">
             <div class="project-header">
               <span class="project-badge">SYSTEMS INTERNALS & MALWARE</span>
               <h3 class="project-title">Thực Nghiệm Keylogger & Phân Tích Log</h3>
@@ -331,7 +412,7 @@
           </article>
 
           <!-- Project 5: Các dự án nhỏ khác -->
-          <article class="project-card">
+          <article class="project-card" data-category="security">
             <div class="project-header">
               <span class="project-badge">TECHNICAL REPOSITORIES</span>
               <h3 class="project-title">Kho Tài Liệu & Dự Án Kỹ Thuật Khác</h3>
@@ -354,8 +435,30 @@
             </div>
           </article>
 
+                    <!-- Project 7: Upcoming Web Project Placeholder -->
+          <article class="project-card web-upcoming-card" data-category="web">
+            <div class="project-header">
+              <span class="project-badge web-badge">CREATIVE WEB & APP</span>
+              <h3 class="project-title">Dự Án Web Mới (Đang Hoàn Thiện)</h3>
+            </div>
+            <p class="project-desc">
+              Khu vực sẵn sàng để cập nhật các sản phẩm Web thương mại, ứng dụng tương tác hoặc landing page chạy quảng cáo tiếp theo của bạn.
+            </p>
+            <div class="project-tech">
+              <span>Next.js / Vite</span>
+              <span>TailwindCSS</span>
+              <span>Interactive UI</span>
+              <span>High-Conversion</span>
+            </div>
+            <div class="project-footer">
+              <span class="project-link muted">
+                <span>Đang Cập Nhật...</span>
+              </span>
+            </div>
+          </article>
+
           <!-- Project 6: Interactive 3D Showcase (This site) -->
-          <article class="project-card highlight">
+          <article class="project-card highlight" data-category="web">
             <div class="project-header">
               <span class="project-badge">CREATIVE ENGINEERING</span>
               <h3 class="project-title">Interactive 3D Web & Security Portfolio</h3>

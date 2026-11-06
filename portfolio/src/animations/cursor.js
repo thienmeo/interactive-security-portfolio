@@ -21,20 +21,20 @@ export function initCursor() {
     gsap.set(ring, { x: pos.x, y: pos.y });
   });
 
-  const interactiveElements = document.querySelectorAll('button, a, .feature-card');
+  const interactiveElements = document.querySelectorAll('button, a, .tab-btn, .project-card, .folder');
   interactiveElements.forEach((el) => {
     el.addEventListener('mouseenter', () => {
       gsap.to(ring, {
-        scale: 1.5,
-        borderColor: '#385a42',
-        backgroundColor: 'rgba(56, 90, 66, 0.06)',
+        scale: 1.4,
+        borderColor: '#2563eb',
+        backgroundColor: 'rgba(37, 99, 235, 0.06)',
         duration: 0.25
       });
     });
     el.addEventListener('mouseleave', () => {
       gsap.to(ring, {
         scale: 1,
-        borderColor: 'rgba(67, 101, 77, 0.3)',
+        borderColor: 'rgba(37, 99, 235, 0.35)',
         backgroundColor: 'transparent',
         duration: 0.25
       });

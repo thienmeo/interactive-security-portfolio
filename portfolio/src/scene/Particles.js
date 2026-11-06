@@ -1,12 +1,12 @@
 import * as THREE from 'three';
 
 export function createParticles(scene) {
-  const count = 450;
+  const count = 180;
   const positions = new Float32Array(count * 3);
   const colors = new Float32Array(count * 3);
 
-  const cyan = new THREE.Color(0x00f0ff);
-  const green = new THREE.Color(0x00ffa3);
+  const cyan = new THREE.Color(0x3b82f6);
+  const green = new THREE.Color(0x06b6d4);
 
   for (let i = 0; i < count; i++) {
     const radius = 9 + Math.random() * 8.5;
@@ -33,7 +33,7 @@ export function createParticles(scene) {
   const ctx = canvas.getContext('2d');
   const grad = ctx.createRadialGradient(16, 16, 0, 16, 16, 16);
   grad.addColorStop(0, 'rgba(255, 255, 255, 1)');
-  grad.addColorStop(0.3, 'rgba(0, 240, 255, 0.8)');
+  grad.addColorStop(0.3, 'rgba(59, 130, 246, 0.5)');
   grad.addColorStop(1, 'rgba(0, 0, 0, 0)');
   ctx.fillStyle = grad;
   ctx.fillRect(0, 0, 32, 32);
